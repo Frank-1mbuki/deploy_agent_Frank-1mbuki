@@ -27,3 +27,15 @@ then
     sed -i s/75/$NEW_WARN/g Helpers/config.json
     sed -i s/50/$NEW_FAIL/g Helpers/config.json
 fi
+
+#Signal Trap to handle user interrupts (SIGINT/Ctrl+C)
+
+echo "Setting up the interrupt trap..."
+
+function catch_cancel() {
+    echo "Script cancelled! Going back..."
+
+    rm -rf attendance_tracker_$DIR_NAME
+}
+
+trap catch_cancel SIGINT
