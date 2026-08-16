@@ -12,7 +12,7 @@ touch attendance_tracker_$DIR_NAME/Helpers/config.json
 touch attendance_tracker_$DIR_NAME/reports/reports.log
 
 #Write attendance_checker.py
-cat <<EOF > attendance_checker.py
+cat <<EOF > attendance_tracker_${DIR_NAME}/attendance_checker.py
 
 import csv
 import json
