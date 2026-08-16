@@ -12,7 +12,8 @@ touch Helpers/config.json
 touch reports/reports.log
 
 #Write attendance_checker.py
-cat "
+cat <<EOF > attendance_checker.py
+
 import csv
 import json
 import os
@@ -58,6 +59,8 @@ def run_attendance_check():
 
 if __name__ == "__main__":
     run_attendance_check()" > "$DIR_NAME/attendance_checker.py"
+EOF
+
     
 #Prompt the user to decide if they want to update the attendance thresholds.
 
