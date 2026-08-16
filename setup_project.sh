@@ -61,7 +61,33 @@ if __name__ == "__main__":
     run_attendance_check()" > "$DIR_NAME/attendance_checker.py"
 EOF
 
-    
+
+#Write assets.csv
+
+cat << 'EOF' > "attendance_tracker_${DIR_NAME}/Helpers/assets.csv"
+Names,Email,Attendance Count
+EOF
+
+#Write config.json
+
+cat << 'EOF' > "attendance_tracker_${DIR_NAME}/Helpers/config.json"
+{
+    "thresholds": {
+        "warning": 75,
+        "failure": 50
+    },
+    "run_mode": "live",
+    "total_sessions": 15
+}
+EOF
+
+#Writing reports.log
+
+cat << 'EOF' > "attendance_tracker_${DIR_NAME}/reports/reports.log"
+--- Initialized Attendance Report Log ---
+EOF
+
+
 #Prompt the user to decide if they want to update the attendance thresholds.
 
 echo "Do you want to update attendance thresholds? (y/n)"
