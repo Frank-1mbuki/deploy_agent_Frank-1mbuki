@@ -5,11 +5,11 @@ read -p "What is project name?" DIR_NAME
 
 #Set up directory structure.                                                       
 mkdir -p attendance_tracker_$DIR_NAME/Helpers attendance_tracker_$DIR_NAME/reports
-cd attendance_tracker_$DIR_NAME
-touch attendance_checker.py
-touch Helpers/assets.csv
-touch Helpers/config.json
-touch reports/reports.log
+
+touch attendance_tracker_$DIR_NAME/attendance_checker.py
+touch attendance_tracker_$DIR_NAME/Helpers/assets.csv
+touch attendance_tracker_$DIR_NAME/Helpers/config.json
+touch attendance_tracker_$DIR_NAME/reports/reports.log
 
 #Write attendance_checker.py
 cat <<EOF > attendance_checker.py
@@ -58,7 +58,7 @@ def run_attendance_check():
                     print(f"[DRY RUN] Email to {email}: {message}")
 
 if __name__ == "__main__":
-    run_attendance_check()" > "$DIR_NAME/attendance_checker.py"
+    run_attendance_check()
 EOF
 
 
