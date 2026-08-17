@@ -115,6 +115,6 @@ then
     read NEW_FAIL
     
     # Trying to replace the numbers in the config file
-    sed -i s/75/$NEW_WARN/g Helpers/config.json
-    sed -i s/50/$NEW_FAIL/g Helpers/config.json
+    sed -i s/75/$NEW_WARN/g attendance_tracker_${DIR_NAME}/Helpers/config.json
+    sed -i s/50/$NEW_FAIL/g attendance_tracker_${DIR_NAME}/Helpers/config.json
 fi
