@@ -123,7 +123,7 @@ fi
 echo "Running health checks..."
 
 python3 --version
-if [ ? -eq 0 ]; then
+if [ $? -eq 0 ]; then
     echo "Python is installed."
 else
     echo "Python is missing!"
