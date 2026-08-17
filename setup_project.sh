@@ -19,6 +19,7 @@ function catch_cancel() {
     echo "Script cancelled! Going back..."
 
     rm -rf attendance_tracker_$DIR_NAME
+    exit 1
 }
 
 trap catch_cancel SIGINT
