@@ -13,6 +13,7 @@ echo "Setting up the interrupt trap..."
 
 function catch_cancel() {
     echo "Script cancelled! Going back..."
+    tar -czf "attendance_tracker_${DIR_NAME}_archive.tar.gz" "attendance_tracker_${DIR_NAME}"
 
     rm -rf attendance_tracker_$DIR_NAME
     exit 1
@@ -110,7 +111,7 @@ then
     echo "Enter new failure:"
     read NEW_FAIL
     
-    # Trying to replace the numbers in the config file
+#Replace the numbers in the config file
     sed -i s/75/$NEW_WARN/g attendance_tracker_${DIR_NAME}/Helpers/config.json
     sed -i s/50/$NEW_FAIL/g attendance_tracker_${DIR_NAME}/Helpers/config.json
 fi
@@ -124,9 +125,5 @@ if [ $? -eq 0 ]; then
 else
     echo "Python is missing!"
 fi
-
-echo "Checking files..."
-ls attendance_tracker_$DIR_NAME/attendance_checker.py
-ls attendance_tracker_$DIR_NAME/Helpers/config.json
 
 echo "Set up completed successfully!"
