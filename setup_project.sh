@@ -118,3 +118,19 @@ then
     sed -i s/75/$NEW_WARN/g attendance_tracker_${DIR_NAME}/Helpers/config.json
     sed -i s/50/$NEW_FAIL/g attendance_tracker_${DIR_NAME}/Helpers/config.json
 fi
+
+#verify if python3 is installed on the local machine
+echo "Running health checks..."
+
+python3 --version
+if [ ? -eq 0 ]; then
+    echo "Python is installed."
+else
+    echo "Python is missing!"
+fi
+
+echo "Checking files..."
+ls attendance_tracker_$DIR_NAME/attendance_checker.py
+ls attendance_tracker_$DIR_NAME/Helpers/config.json
+
+echo "Set up completed successfully!"
