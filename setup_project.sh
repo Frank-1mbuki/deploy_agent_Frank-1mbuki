@@ -4,7 +4,7 @@
 read -p "What is project name?" DIR_NAME
 
 #Set up directory structure.                                                       
-mkdir -p attendance_tracker_$DIR_NAME/Helpers attendance_tracker_$DIR_NAME/reports
+mkdir -p attendance_tracker_${DIR_NAME}/Helpers attendance_tracker_${DIR_NAME}/reports
 
 
 #Signal Trap to handle user interrupts (SIGINT/Ctrl+C)                             
