@@ -6,10 +6,6 @@ read -p "What is project name?" DIR_NAME
 #Set up directory structure.                                                       
 mkdir -p attendance_tracker_$DIR_NAME/Helpers attendance_tracker_$DIR_NAME/reports
 
-touch attendance_tracker_$DIR_NAME/attendance_checker.py
-touch attendance_tracker_$DIR_NAME/Helpers/assets.csv
-touch attendance_tracker_$DIR_NAME/Helpers/config.json
-touch attendance_tracker_$DIR_NAME/reports/reports.log
 
 #Signal Trap to handle user interrupts (SIGINT/Ctrl+C)                             
 
