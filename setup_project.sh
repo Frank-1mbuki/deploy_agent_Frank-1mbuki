@@ -113,6 +113,7 @@ EOF
 
 #Prompt the user to decide if they want to update the attendance thresholds.
 
+echo "Default values: Warning = 75, Failure = 50."
 echo "Do you want to update attendance thresholds? (y/n)"
 read UPDATE_CONF
 
