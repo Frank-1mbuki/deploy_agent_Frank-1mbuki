@@ -1,7 +1,19 @@
 #!/usr/bin/env bash                                                                
 #Project Factory for the Student Attendance Tracker.                               
 
-read -p "What is project name? " DIR_NAME
+# Prompt for project name; require one-word (no spaces)
+while true; do
+    read -p "What is project name? " DIR_NAME
+    if [[ -z "$DIR_NAME" ]]; then
+        echo "Project name cannot be empty. Please enter a one-word name (no spaces)."
+        continue
+    fi
+    if [[ "$DIR_NAME" =~ [[:space:]] ]]; then
+        echo "Spaces are not allowed. Please enter a one-word name (no spaces)."
+        continue
+    fi
+    break
+done
 
 #Set up directory structure.                                                       
 mkdir -p attendance_tracker_${DIR_NAME}/Helpers attendance_tracker_${DIR_NAME}/reports
