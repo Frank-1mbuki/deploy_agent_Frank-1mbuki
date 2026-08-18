@@ -114,6 +114,9 @@ then
 #Replace the numbers in the config file
     sed -i s/75/$NEW_WARN/g attendance_tracker_${DIR_NAME}/Helpers/config.json
     sed -i s/50/$NEW_FAIL/g attendance_tracker_${DIR_NAME}/Helpers/config.json
+    
+else 
+    echo "Using default values: Warning = 75, Failure = 50."
 fi
 
 #verify if python3 is installed on the local machine
